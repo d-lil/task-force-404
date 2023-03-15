@@ -11,8 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "nodemon": "^2.0.21"
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "heroku": "7.69.0"
