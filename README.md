@@ -16,8 +16,7 @@
   If you are just visiting the page, no installation is needed.
   However, if you are running the program from the command line then you must follow the simple instructions below.
 
-  To install the dependencies needed, open the console and run:
-  In the command line of integrated terminal - type: npm i 
+  To install the dependencies needed, open the console and type: npm i 
   ## Usage:
 
   https://serene-oasis-60773.herokuapp.com/
