@@ -2,6 +2,7 @@
 
 # task-force-404
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
   This is a simple note task list app that allows you to add (or remove) tasks to a list on a page, and will stay on the list even if the browser is closed.
   ## Table of Contents:
   * [Installation](#installation)
@@ -12,11 +13,14 @@
   * [Tests](#tests)
   * [Questions](#questions)
   ## Installation:
+  If you are just visiting the page, no installation is needed.
+  However, if you are running the program from the command line then you must follow the simple instructions below.
+
   To install the dependencies needed, open the console and run:
   In the command line of integrated terminal - type: npm i 
   ## Usage:
 
-  
+  https://serene-oasis-60773.herokuapp.com/
 
   GIVEN a note-taking application
   * WHEN I open the Note Taker
@@ -60,7 +64,7 @@
       
       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   ## Credits
-  I would like to appreciate Ben Sboto, for guiding me down the path of changing the way I was reading/writing files in my app for my notes.js
+  I would like to appreciate Ben Sboto, for guiding me down the path of changing the way I was reading/writing files in my app for my notes.js router. 
   ## Contributing:
   N/A
   ## Tests:
