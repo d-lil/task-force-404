@@ -1,30 +1,35 @@
 const notes = require('express').Router();
 const express = require('express');
-const uuid = require('../helpers/uuid');
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils')
+const uuidv4 = require('../helpers/uuid');
+const path = require('path');
+const db = path.join(__dirname, "..", "db", "db.json")
+const fs = require('fs');
 
 notes.use(express.json());
 notes.use(express.urlencoded({ extended: true }));
 
 notes.get("/", (req, res) => {
-    readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
+    const pageNotes = JSON.parse(fs.readFileSync(db))
+    res.json(pageNotes)
   });
 
 notes.post("/", (req, res) => {
   const newNote = req.body;
-  newNote.id = uuid.v4();
-  readAndAppend(newNote, '../db/db.json');
+  newNote.id = uuidv4();
+  const pageNotes = JSON.parse(fs.readFileSync("./db/db.json"));fs.readfi
+  pageNotes.push(newNote);
+  fs.writeFileSync("./db/db.json", JSON.stringify(pageNotes));
   res.json(newNote);
   console.info(`${req.method} request received`);
 });
 
 notes.delete("/:id", (req, res) => {
   const noteId = req.params.id;
-  readFromFile('..db/db.json').then((data) => res.json(JSON.parse(data)));
-  const notesUpdated = filter((data) => data.id !== noteId);
-  readAndAppend(notesUpdated, "./db/db.json");
+  const pageNotes = JSON.parse(fs.readFileSync("./db/db.json"));
+  const updatedNotes = pageNotes.filter((note) => note.id !== noteId);
+  fs.writeFileSync("./db/db.json", JSON.stringify(updatedNotes));
   res.json('Note be gone');
-  console.info('Note has left the chat');
+  console.info("Note has left the chat");
 });
 
 module.exports = notes;
